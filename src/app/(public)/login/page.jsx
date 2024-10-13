@@ -10,7 +10,7 @@ const Login = () => {
     password: "",
   });
 
-  const { signIn } = useAuthContext();
+  const { signIn, signUpProvider } = useAuthContext();
 
   const handleChange = (e) =>
     setInfo({ ...info, [e.target.name]: e.target.value });
@@ -73,6 +73,7 @@ const Login = () => {
               <button
                 className="flex justify-between text-center items-center btn-danger"
                 type="button"
+                onClick={()=> signUpProvider()}
               >
                 Continue with Google
                 <GoogleIcon color="currentColor" />
