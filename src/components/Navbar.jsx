@@ -1,8 +1,8 @@
 "use client"
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Disclosure, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
+import { useAuthContext } from "@/context/AuthContext";
 
 
 
@@ -12,7 +12,8 @@ function classNames(...classes) {
 
 export default function Navbar() {
     const [showBackground, setShowBackground] = useState(false);
-    const currentUser = {displayName: "MeK"}
+    // const currentUser = {displayName: "MeK"}
+    const {currentUser} = useAuthContext()
     useEffect(() => {
         const handleScroll = () => {
           // console.log(window.scrollY);
