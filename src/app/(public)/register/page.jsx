@@ -1,19 +1,27 @@
 "use client";
-import React, {useState} from 'react'
+import React, { useState } from "react";
 import GoogleIcon from "/public/icons/GoogleIcon";
+import { useAuthContext } from "@/context/AuthContext";
 
 const Register = () => {
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    password: ""
-  })
-  const handleChange = (e)=> setInfo({...info, [e.target.name]:e.target.value})
-  const handleSubmit =(e)=>{
-    e.preventDefault()
-    console.log({info});
-  }
+    password: "",
+  });
+
+  const {createUser} = useAuthContext()
+
+  const handleChange = (e) =>
+    setInfo({ ...info, [e.target.name]: e.target.value });
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { firstName, lastName, email, password } = info;
+    const displayName = `${firstName} ${lastName}`;
+    createUser(email, password, displayName);
+    console.log({ info });
+  };
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
@@ -31,7 +39,6 @@ const Register = () => {
                   required
                   placeholder=" "
                   onChange={handleChange}
-                  
                 />
                 <label htmlFor="floating_text">First Name</label>
               </div>
@@ -43,7 +50,6 @@ const Register = () => {
                   required
                   placeholder=" "
                   onChange={handleChange}
-                  
                 />
                 <label htmlFor="floating_text">Last Name</label>
               </div>
@@ -55,7 +61,6 @@ const Register = () => {
                   placeholder=" "
                   required
                   onChange={handleChange}
-                  
                 />
                 <label htmlFor="floating_email">Email</label>
               </div>
@@ -67,7 +72,6 @@ const Register = () => {
                   placeholder=" "
                   required
                   onChange={handleChange}
-                  
                 />
                 <label htmlFor="floating_password">Password</label>
               </div>
@@ -77,7 +81,6 @@ const Register = () => {
               <button
                 className="flex justify-between text-center items-center btn-danger"
                 type="button"
-                
               >
                 Continue with Google
                 <GoogleIcon color="currentColor" />
@@ -87,7 +90,7 @@ const Register = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
