@@ -27,4 +27,12 @@ const MovieDetail = async ({ params: { movieId } }) => {
 
 export default MovieDetail;
 
+export async function generateMetadata({ params: { movieId } }) {
+    const movieDetails = await getMovieDetail(movieId);
+    return {
+      title: movieDetails.title,
+      description: `This is the page of ${movieDetails.title}`,
+    };
+  }
+
 
