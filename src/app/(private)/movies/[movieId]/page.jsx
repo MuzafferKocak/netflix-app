@@ -2,7 +2,11 @@ import React from "react";
 import VideoSection from "../components/VideoSection";
 import Link from "next/link";
 import { BackspaceIcon } from "@heroicons/react/24/solid";
-import { getVideoKey,getMovieDetail } from "@/helpers/movieFunctions";
+import {
+  getVideoKey,
+  getMovieDetail,
+  getMovies,
+} from "@/helpers/movieFunctions";
 
 const MovieDetail = async ({ params: { movieId } }) => {
   const videoKey = await getVideoKey(movieId);
@@ -28,11 +32,22 @@ const MovieDetail = async ({ params: { movieId } }) => {
 export default MovieDetail;
 
 export async function generateMetadata({ params: { movieId } }) {
-    const movieDetails = await getMovieDetail(movieId);
-    return {
-      title: movieDetails.title,
-      description: `This is the page of ${movieDetails.title}`,
-    };
-  }
+  const movieDetails = await getMovieDetail(movieId);
+  return {
+    title: movieDetails.title,
+    description: `This is the page of ${movieDetails.title}`,
+  };
+}
 
+export async function generateStaticParams() {
+  const [movies1, movies2, movies3, movies4] = await Promise.all([
+    getMovies("now_playing"),
+    getMovies("popular"),
+    getMovies("top_rated"),
+    getMovies("upcoming"),
+  ]);
 
+  return [...movies1, ...movies2, ...movies3, ...movies4].map((movie) => ({
+    movieId: movie.id.toString(),
+  }));
+}
