@@ -22,13 +22,13 @@ export const getVideoKey = async (movieId) => {
   return data?.results[0]?.key;
 };
 
-export const getVideoDetail = async (movieId) => {
-  const movieDetailBaseUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
-
-  const res = await fetch(movieDetailBaseUrl);
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  const data = await res.json();
-  return data
-};
+export const getMovieDetail = async (movieId) => {
+    const movieDetailBaseUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${API_KEY}`;
+  
+    const res = await fetch(movieDetailBaseUrl);
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
+    }
+    const data = await res.json();
+    return data;
+  };

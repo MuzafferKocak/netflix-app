@@ -2,7 +2,7 @@ import React from "react";
 import VideoSection from "../components/VideoSection";
 import Link from "next/link";
 import { BackspaceIcon } from "@heroicons/react/24/solid";
-import { getVideoKey } from "@/helpers/movieFunctions";
+import { getVideoKey,getMovieDetail } from "@/helpers/movieFunctions";
 
 const MovieDetail = async ({ params: { movieId } }) => {
   const videoKey = await getVideoKey(movieId);
@@ -26,3 +26,5 @@ const MovieDetail = async ({ params: { movieId } }) => {
 };
 
 export default MovieDetail;
+
+

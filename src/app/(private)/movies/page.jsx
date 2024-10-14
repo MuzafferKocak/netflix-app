@@ -3,6 +3,11 @@ import React from "react";
 import HeroSection from "./components/HeroSection";
 import MovieSection from "./components/MovieSection";
 
+export const metadata = {
+  title: "Movies",
+  description: "this is movies page"
+}
+
 const Movies = async () => {
   const movies = await getMovies("now_playing");
   console.log(movies);
