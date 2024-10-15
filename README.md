@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Netflix-Klon mit Next.js und Firebase
 
-## Getting Started
+## Überblick
 
-First, run the development server:
+Dies ist ein Netflix-Klon, der mit **Next.js** erstellt wurde und Film- und Serieninformationen von **Firebase** abruft. Die Anwendung zeigt eine Sammlung von Filmen und TV-Serien an, sortiert nach Kategorien wie "Beliebt", "Trendig" und "Neuerscheinungen". Benutzer können detaillierte Informationen zu jedem Film/Serie anzeigen, Trailer abspielen und sich über ähnliche Titel informieren.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Anzeige von Filmen und TV-Serien mit Informationen wie Titel, Beschreibung, Bewertung, Veröffentlichungsdatum und Trailer.
+- Kategorien wie "Beliebt", "Trendig", "Top bewertet" und "Neuerscheinungen".
+- Detailseiten für jeden Film/jede Serie mit zusätzlichen Informationen und verwandten Titeln.
+- Responsives Design: Optimiert für Desktop, Tablet und Mobilgeräte.
+- Server Side Rendering (SSR) mit Next.js für bessere Performance und SEO.
+  
+## Verwendete Technologien
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- **Next.js**: React-basiertes Framework für die Erstellung von SSR- und statischen Webseiten.
+- **Firebase**: Backend-as-a-Service, das als Datenbank und API für die Filmdaten verwendet wird.
+- **Firebase Auth**: Authentifizierungssystem, falls Benutzeranmeldung erforderlich ist.
+- **Tailwind CSS**: Utility-First CSS-Framework für ein responsives und modernes Design.
+- **Vercel**: Deployment der Anwendung auf Vercel oder einem anderen Hosting-Anbieter.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Installation
 
-## Learn More
+1. Klone das Repository:
+    ```bash
+    git clone https://github.com/dein-repository/netflix-klon.git
+    ```
+   
+2. Installiere die Abhängigkeiten:
+    ```bash
+    npm install
+    ```
+   
+3. Erstelle eine `.env.local` Datei und füge deine Firebase-Konfigurationsvariablen hinzu:
+    ```
+    NEXT_PUBLIC_FIREBASE_API_KEY=dein_api_key
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=dein_auth_domain
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID=dein_project_id
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=dein_storage_bucket
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=deine_messaging_sender_id
+    NEXT_PUBLIC_FIREBASE_APP_ID=deine_app_id
+    NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=deine_measurement_id
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Starte den Entwicklungsserver:
+    ```bash
+    npm run dev
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+5. Öffne den Browser und gehe zu `http://localhost:3000`, um die Anwendung zu sehen.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Firebase Konfiguration
 
-## Deploy on Vercel
+Die Anwendung verwendet **Firebase**, um Filmdaten und Serieninformationen zu speichern und abzurufen. Um Firebase zu konfigurieren, musst du ein Firebase-Projekt erstellen und die oben genannten Umgebungsvariablen (`.env.local`) in dein Projekt einfügen. Gehe auf [Firebase Console](https://console.firebase.google.com/), um dein Projekt zu verwalten.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Screenshots
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
