@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
@@ -14,9 +14,12 @@ const MovieCard = ({ poster_path, vote_average, id }) => {
       className="w-40 h-[240px] relative cursor-pointer"
       onClick={() => router.push("/movies/" + id)}
     >
-      <Image src={poster_path ? IMG_API + poster_path : defaultImage} alt="" 
-      width={160}
-      height={240} />
+      <Image
+        src={poster_path ? IMG_API + poster_path : defaultImage}
+        alt=""
+        width={160}
+        height={240}
+      />
 
       <span className="absolute bottom-1 right-1 text-white font-semibold z-10">
         {vote_average.toFixed(1)}

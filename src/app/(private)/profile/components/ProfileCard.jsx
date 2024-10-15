@@ -2,7 +2,7 @@ import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProfileCard = ({ image, name }) => {
- const router = useRouter();
+  const router = useRouter();
   return (
     <div
       className="w-44 mx-auto cursor-pointer group"

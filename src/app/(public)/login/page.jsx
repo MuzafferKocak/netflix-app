@@ -73,7 +73,7 @@ const Login = () => {
               <button
                 className="flex justify-between text-center items-center btn-danger"
                 type="button"
-                onClick={()=> signUpProvider()}
+                onClick={() => signUpProvider()}
               >
                 Continue with Google
                 <GoogleIcon color="currentColor" />

@@ -56,7 +56,7 @@ const AuthContextProvider = ({ children }) => {
 
   //* https://console.firebase.google.com/
   //* => Authentication => sign-in-method => enable Email/password
-  
+
   //! Aktivieren anmeldung mit email/passwort
   const signIn = async (email, password) => {
     try {

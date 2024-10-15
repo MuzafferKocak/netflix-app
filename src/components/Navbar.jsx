@@ -47,11 +47,6 @@ export default function Navbar() {
             <img className="h-4 lg:h-7" src="/images/logo.png" alt="logo" />
           </Link>
 
-          <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            <div className="flex flex-shrink-0 items-center">
-              <img alt="mek" src="" className="h-7 w-auto" />
-            </div>
-          </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             {currentUser && (
               <h5 className="mr-2 capitalize">{currentUser?.displayName}</h5>

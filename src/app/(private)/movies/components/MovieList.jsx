@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-const MovieList = ({movies}) => {
+const MovieList = ({ movies }) => {
   return (
     <div className="grid grid-flow-col gap-2 overflow-x-scroll">
       {movies.map((movie) => (
