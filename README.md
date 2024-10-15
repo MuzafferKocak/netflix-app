@@ -24,7 +24,7 @@ Dies ist ein Netflix-Klon, der mit **Next.js** erstellt wurde und Film- und Seri
 
 1. Klone das Repository:
     ```bash
-    git clone https://github.com/dein-repository/netflix-klon.git
+    git clone https://github.com/MuzafferKocak/netflix-app
     ```
    
 2. Installiere die Abhängigkeiten:
