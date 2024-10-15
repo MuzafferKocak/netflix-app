@@ -58,4 +58,5 @@ Die Anwendung verwendet **Firebase**, um Filmdaten und Serieninformationen zu sp
 
 
 
+![netflix-app](https://github.com/user-attachments/assets/528f7001-d51e-4cc9-9f6e-1b548e8efb02)
 
