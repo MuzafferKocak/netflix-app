@@ -14,7 +14,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <h1>Netflix App</h1>
     </main>
   );
 }
